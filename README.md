@@ -27,7 +27,7 @@ git clone https://github.com/zaivanza/all-in-one-v2
 Заходим в папку со скриптом
 ```
 dir
-cd all-in-one-v2-main
+cd all-in-one-v2
 ```
 Устанавливаем pip:
 ```
@@ -42,7 +42,7 @@ pip3 install -r requirements.txt
 
 ```bash
 # Заходим в папку скрипта
-cd /root/all-in-one-v2-main
+cd /root/all-in-one-v2
 
 # Запуск с выводом stdout в командную строку
 python3 MAIN.py
