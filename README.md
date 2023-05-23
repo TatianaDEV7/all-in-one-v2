@@ -20,6 +20,10 @@
 6. Сделал универсальный апрув и предварительную проверку на кол-во апрувнутых монет (check_allowance). то есть лишних апрувов делать не будет.
 
 # Установка на Ubuntu
+Обновляемся
+```
+sudo apt update && sudo apt upgrade -y
+```
 Скачиваем
 ```
 git clone https://github.com/zaivanza/all-in-one-v2
@@ -75,3 +79,6 @@ kill (номер процесса)
 Donate (evm) : `0xb7415DB78c886c67DBfB25D3Eb7fcd496dAf9021` or `donates-for-hodlmod.eth`
 
 Паблик : https://t.me/hodlmodeth. [ code ] чат : https://t.me/code_hodlmodeth.
+
+# Полезно
+Указаны все монеты и сети для вывода CEX Бирж: https://github.com/th0masi/all-cex-withdrawal
