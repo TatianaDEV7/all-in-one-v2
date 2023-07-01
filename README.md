@@ -1,5 +1,11 @@
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=All-in-one+V2)](https://git.io/typing-svg)
 
+Огромная просьба сначала все прочитать на 10 раз, все протестировать, погуглить и только потом задавать вопросы в наш код чат. В личку админам с вопросами по коду просьба не писать, они не ответят.
+
+Donate (evm) : `0xb7415DB78c886c67DBfB25D3Eb7fcd496dAf9021` or `donates-for-hodlmod.eth`
+
+Паблик : https://t.me/hodlmodeth. [ code ] чат : https://t.me/code_hodlmodeth.
+
 Идеальный скрипт-V2 для ведения фермы. Освоив его, ты сможешь (идет перечисление модулей) :
 
 1. web3_checker : очень быстро (асинка) смотрит баланс монеты в любой evm сети.
@@ -57,13 +63,52 @@ pip3 install -r requirements.txt
 4. Не забудь настроить тг-бота. Для этого в файле `setting.py` в переменную `TG_TOKEN` нужно вставить токен от тг бота. В переменную `TG_ID` нужно вставить свой id токен, узнать его можно здесь : https://t.me/getmyid_bot.
 5. Запускать нужно файл `MAIN.py`
 
-Устанавливаем библиотеки : `pip3 install -r requirements.txt`
+!!! ВНИМАНИЕ ЕСЛИ ВЫ ИСПОЛЬЗУЕТЕ ПОСЛЕДНЮЮ ВЕРСИЮ СКРИПТА, значит нужный модуль выбирается в интерактиве. Вот выдержка из [README](https://github.com/zaivanza/all-in-one-v2/blob/main/README.md):
+> Запускать нужно файл main.py, **в терминале будет список с модулями, нужно будет выбрать один**.
+> ![image](https://github.com/TatianaDEV7/all-in-one-v2/assets/98289003/608ddecc-dfd2-462e-bfd1-f84a15084c3b)
+### Запуск интерактивного скрипта
+```bash
+# Лучше запустить фоном с помощью tmux. Установим tmux:
+sudo apt update && sudo apt install tmux -y
 
-Огромная просьба сначала все прочитать на 10 раз, все протестировать, погуглить и только потом задавать вопросы в наш код чат. В личку админам с вопросами по коду просьба не писать, они не ответят.
+# Запускаем сессию тмукс (название сессии любое, я выбрал `all-script-madule-3` так как запускаю третий модуль):
+tmux new -s all-script-madule-3
 
-Donate (evm) : `0xb7415DB78c886c67DBfB25D3Eb7fcd496dAf9021` or `donates-for-hodlmod.eth`
+# Переходим в папку со скриптом (папка у вас может по другому называться):
+cd /root/all-in-one-v2
 
-Паблик : https://t.me/hodlmodeth. [ code ] чат : https://t.me/code_hodlmodeth.
+#Теперь запускаем сам скрипт:
+python3 main.py
+```
+### tmux команды
+[Шпаргался от Losst](https://losst.pro/shpargalka-po-tmux). 
+
+Список частых команд:
+
+Выходим из сессии `Ctrl+b d` (Но сессия ДАЛЬШЕ продолжит работать в фоне): 
+
+Лист с сессиями:
+```
+tmux ls
+```
+Опять конектимся к сессии:
+```
+tmux attach -t all-script-module
+```
+> !Только не закрывайте скрипт с помощью CTRL+C
+
+Создание новой сессии:
+```
+tmux new -s <name-of-session>
+```
+Закрыть все сессии:
+```
+tmux kill-server
+```
+закрыть определенную сессию:
+```
+tmux kill-session -t <name-of-session>
+```
 
 # Запуск (только после Настройки)
 
