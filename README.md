@@ -44,9 +44,10 @@ cd all-in-one-v2
 apt install python3-pip
 ```
 Устанавливаем библиотеки. Для заметки - для этого скриптаустанавливается `web3==6.2`
-```
+```sh
 pip install telebot
 pip3 install -r requirements.txt
+# pip install web3==6.2
 ```
 
 
