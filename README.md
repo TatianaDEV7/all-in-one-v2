@@ -42,21 +42,6 @@ apt install python3-pip
 pip install telebot
 pip3 install -r requirements.txt
 ```
-# Запуск (только после Настройки)
-
-```bash
-# Заходим в папку скрипта
-cd /root/all-in-one-v2
-
-# Запуск с выводом stdout в командную строку
-python3 MAIN.py
-# Запуск в фоновом режиме. Записывает логи в файл log.log
-nohup python3 MAIN.py > log.log 2>&1 &
-
-# Завершить процесс:
-pgrep -a python
-kill (номер процесса)
-```
 
 
 # Настройка.
@@ -79,6 +64,22 @@ kill (номер процесса)
 Donate (evm) : `0xb7415DB78c886c67DBfB25D3Eb7fcd496dAf9021` or `donates-for-hodlmod.eth`
 
 Паблик : https://t.me/hodlmodeth. [ code ] чат : https://t.me/code_hodlmodeth.
+
+# Запуск (только после Настройки)
+
+```bash
+# Заходим в папку скрипта
+cd /root/all-in-one-v2
+
+# Запуск с выводом stdout в командную строку
+python3 MAIN.py
+# Запуск в фоновом режиме. Записывает логи в файл log.log
+nohup python3 MAIN.py > log.log 2>&1 &
+
+# Завершить процесс:
+pgrep -a python
+kill (номер процесса)
+```
 
 # Полезно
 Указаны все монеты и сети для вывода CEX Бирж: https://github.com/th0masi/all-cex-withdrawal
