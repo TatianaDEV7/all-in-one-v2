@@ -182,5 +182,15 @@ def exchange_withdraw(privatekey):
 ```
 В строке `amount_ = round(random.uniform(amount_from, amount_to), 7)` заменить 7 на необходимое количество знаков после запятой.
 
+### 2)  Приватники или адреса
+Ошибка может выглядеть так: 
+> error : binance {"code":-4007,"msg":"Address verification failed. Please confirm the network is matched with the withdrawal address. You may consult with recipient's platform for details."}
+
+
+В файле обновленного скрипта есть строчка:
+```
+is_private_key = True # True если в wallets.txt вставил evm приватники. False если адреса (evm / не evm)
+```
+Ее обязательно надо учитывать при настройке иначе просто не пойдет скрипт.
 # Полезно
 Указаны все монеты и сети для вывода CEX Бирж: https://github.com/th0masi/all-cex-withdrawal
