@@ -126,6 +126,61 @@ nohup python3 MAIN.py > log.log 2>&1 &
 pgrep -a python
 kill (номер процесса)
 ```
+# Решение Ошибки
+### 1) Знаки после запятой
+Ошибка может выглядеть так: 
+> error : binance {"code":-4007,"msg":"Address verification failed. Please confirm the network is matched with the withdrawal address. You may consult with recipient's platform for details."}
+
+
+Для примера разберем модуль **exchange_withdrowal**:
+Параметр записан либо в `all-in-one-v2/utils.py` либо в обновленном скрипте в файле `all-in-one-v2/modules/exchange_withdraw.py`
+
+```
+def exchange_withdraw(privatekey):
+
+    try:
+
+        cex, chain, symbol, amount_from, amount_to = value_exchange()
+        amount_ = round(random.uniform(amount_from, amount_to), 7)
+
+        logger.info(f"{cex}_withdraw")
+
+        API_KEY     = CEX_KEYS[cex]['api_key']
+        API_SECRET  = CEX_KEYS[cex]['api_secret']
+
+        wallet = evm_wallet(privatekey)
+
+        dict_ = {
+            'apiKey': API_KEY,
+            'secret': API_SECRET,
+            'enableRateLimit': True,
+            'options': {
+                'defaultType': 'spot'
+            }
+        }
+
+        if cex in ['kucoin']:
+            dict_['password'] = CEX_KEYS[cex]['password']
+
+        account = ccxt.__dict__[cex](dict_)
+
+        account.withdraw(
+            code = symbol,
+            amount = amount_,
+            address = wallet,
+            tag = None, 
+            params = {
+                "network": chain
+            }
+        )
+        logger.success(f"{cex}_withdraw success => {wallet} | {amount_} {symbol}")
+        list_send.append(f'{STR_DONE}{cex}_withdraw')
+
+    except Exception as error:
+        logger.error(f"{cex}_withdraw unsuccess => {wallet} | error : {error}")
+        list_send.append(f'{STR_CANCEL}{cex}_withdraw')
+```
+В строке `amount_ = round(random.uniform(amount_from, amount_to), 7)` заменить 7 на необходимое количество знаков после запятой.
 
 # Полезно
 Указаны все монеты и сети для вывода CEX Бирж: https://github.com/th0masi/all-cex-withdrawal
