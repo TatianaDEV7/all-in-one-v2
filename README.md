@@ -48,6 +48,7 @@ apt install python3-pip
 pip install telebot
 pip3 install -r requirements.txt
 # pip install web3==6.2
+# pip install requests loguru web3 telebot tqdm ccxt termcolor tabulate
 ```
 
 
@@ -118,9 +119,9 @@ tmux kill-session -t <name-of-session>
 cd /root/all-in-one-v2
 
 # Запуск с выводом stdout в командную строку
-python3 MAIN.py
+python3 main.py
 # Запуск в фоновом режиме. Записывает логи в файл log.log
-nohup python3 MAIN.py > log.log 2>&1 &
+nohup python3 main.py > log.log 2>&1 &
 
 # Завершить процесс:
 pgrep -a python
