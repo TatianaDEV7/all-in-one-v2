@@ -32,24 +32,42 @@ sudo apt update && sudo apt upgrade -y
 ```
 Скачиваем
 ```
+cd
 git clone https://github.com/zaivanza/all-in-one-v2
+apt install python3-pip
 ```
+Начинаем работать в вирт окружении
+```
+tmux new -s all_in
+# tmux attach -t all_in
+cd /root/all-in-one-v2
+python3 --version
+```
+Установим python 3.10 и выберим его :
+- гайд https://github.com/TatianaDEV7/Guides/tree/main
+
 Заходим в папку со скриптом
 ```
 dir
 cd all-in-one-v2
-```
-Устанавливаем pip:
-```
-apt install python3-pip
-```
-Устанавливаем библиотеки. Для заметки - для этого скриптаустанавливается `web3==6.2`
-```sh
-pip install telebot
-pip3 install -r requirements.txt
-# pip install web3==6.2
+mkdir /root/all-in-one-v2/venv
+python3.9 -m venv /root/all-in-one-v2/venv
+source /root/all-in-one-v2/venv/bin/activate
+
+cd /root/all-in-one-v2
+sudo apt-get install gcc python-dev libgmp3-dev
+pip install -r requirements.txt
+pip install requests
+# pip install МОДУЛЬ
 # pip install requests loguru web3 telebot tqdm ccxt termcolor tabulate
+
+#RUN
+tmux attach -t aevo
+python main.py
 ```
+
+
+
 
 
 # Настройка.
