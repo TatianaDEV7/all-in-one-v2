@@ -59,10 +59,10 @@ sudo apt-get install gcc python-dev libgmp3-dev
 pip install -r requirements.txt
 pip install requests
 # pip install МОДУЛЬ
-# pip install requests loguru web3 telebot tqdm ccxt termcolor tabulate
+# pip install datas requests loguru web3 telebot tqdm ccxt termcolor tabulate
 
 #RUN
-tmux attach -t aevo
+tmux attach -t all_in
 python main.py
 ```
 
