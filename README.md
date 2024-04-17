@@ -46,7 +46,7 @@ python3 --version
 Установим python 3.10 и выберим его :
 - гайд https://github.com/TatianaDEV7/Guides/tree/main
 
-Заходим в папку со скриптом
+Заходим в папку со скриптом и сначала переименуем папку `datas_EXAMPLE` в `datas` и тлько после этого растраиваем виртуальное окружение. Подробная настройка на странице оригинального скрипта.
 ```
 dir
 cd all-in-one-v2
@@ -211,5 +211,25 @@ def exchange_withdraw(privatekey):
 is_private_key = True # True если в wallets.txt вставил evm приватники. False если адреса (evm / не evm)
 ```
 Ее обязательно надо учитывать при настройке иначе просто не пойдет скрипт.
+
+## 3) 
+```
+admin@sdfsdfsdf:~/all-in-one-v2# python3 main.py
+Traceback (most recent call last):
+  File "/root/all-in-one-v2/main.py", line 1, in <module>
+    from modules.utils.titles import TITLE, TITLE_COLOR
+  File "/root/all-in-one-v2/modules/__init__.py", line 1, in <module>
+    from .zerox_swap import ZeroXswap
+  File "/root/all-in-one-v2/modules/zerox_swap.py", line 1, in <module>
+    from datas.data import API_0x
+ModuleNotFoundError: No module named 'datas.data'
+```
+Раньше такая ошибка возникала из за того что надо было переименовать файл `data.txt` в `data.py`
+
+С новой версией скрипта решение такое - 
+```
+Надо удалить папку виртуального окружения venv и после того как ты убедился что ты точно переименовал datas_EXAMPLE в datas - только тогда создавать и настраивать виртуальное окружение!
+```
+
 # Полезно
 Указаны все монеты и сети для вывода CEX Бирж: https://github.com/th0masi/all-cex-withdrawal
